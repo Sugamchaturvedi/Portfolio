@@ -10,6 +10,7 @@ export const personalInfo = {
   email: 'sugamchaturvedi038@gmail.com',
   github: 'https://github.com/Sugamchaturvedi20',
   linkedin: 'https://www.linkedin.com/in/sugam20',
+  avatar: './sugam-chaturvedi.jpg',
   resumePath: './Sugam_Chaturvedi_Resume.pdf',
   stats: [
     { label: 'Core Projects', value: '3+' },

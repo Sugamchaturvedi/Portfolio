@@ -42,15 +42,33 @@ export const Hero: React.FC = () => {
           {/* Left Column: Heading, Subtitle, Intro & CTAs */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-sky-500/30 shadow-sm backdrop-blur-md">
-              <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
-              </span>
-              <span className="text-xs font-mono font-medium text-sky-300 tracking-wide">
-                B.Tech CSE @ Lovely Professional University
-              </span>
+            {/* Profile Avatar & Status Badge */}
+            <div className="flex items-center gap-4">
+              <div className="relative group shrink-0">
+                <div className="absolute -inset-0.5 bg-gradient-to-tr from-sky-400 via-cyan-300 to-indigo-600 rounded-full blur-sm opacity-70 group-hover:opacity-100 transition duration-300"></div>
+                <img
+                  src={personalInfo.avatar}
+                  alt={personalInfo.name}
+                  className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover object-top border-2 border-[#0b1120] shadow-xl"
+                />
+                <span className="absolute bottom-0.5 right-0.5 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-emerald-400 border-2 border-[#0b1120]" title="Available for work"></span>
+              </div>
+
+              <div className="space-y-1">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-sky-500/30 shadow-sm backdrop-blur-md">
+                  <span className="flex h-2 w-2 relative">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+                  </span>
+                  <span className="text-xs font-mono font-medium text-sky-300 tracking-wide">
+                    B.Tech CSE @ Lovely Professional University
+                  </span>
+                </div>
+                <div className="text-xs text-slate-400 font-mono pl-1 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  <span>Actively seeking SDE Internships</span>
+                </div>
+              </div>
             </div>
 
             {/* Main Heading */}
