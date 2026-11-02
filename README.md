@@ -78,7 +78,7 @@ Portfolio/
 │   ├── App.tsx                       # Main layout with active section scroll spy
 │   ├── main.tsx                      # React root entry point
 │   └── index.css                     # Tailwind directives, glassmorphism, & dark mode theme
-├── index.html                        # SEO meta tags, OpenGraph data & Google Fonts
+├── index7.html                       # SEO meta tags, OpenGraph data & Google Fonts
 ├── package.json                      # Scripts and dependencies
 ├── tailwind.config.js                # Custom deep navy / near-black color palette
 ├── tsconfig.json                     # Strict TypeScript compiler options
