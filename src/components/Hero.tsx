@@ -231,7 +231,7 @@ export const Hero: React.FC = () => {
                       <p className="pl-4"><span className="text-slate-400">name:</span> <span className="text-emerald-300">"Sugam Chaturvedi"</span>,</p>
                       <p className="pl-4"><span className="text-slate-400">degree:</span> <span className="text-emerald-300">"B.Tech Computer Science & Eng"</span>,</p>
                       <p className="pl-4"><span className="text-slate-400">university:</span> <span className="text-emerald-300">"Lovely Professional University"</span>,</p>
-                      <p className="pl-4"><span className="text-slate-400">cgpa:</span> <span className="text-amber-300">6.5</span>,</p>
+                      <p className="pl-4"><span className="text-slate-400">cgpa:</span> <span className="text-amber-300">6.67</span>,</p>
                       <p className="pl-4"><span className="text-slate-400">specialization:</span> [</p>
                       <p className="pl-8 text-cyan-300">"Full-Stack Web Engineering",</p>
                       <p className="pl-8 text-cyan-300">"Distributed Backend Services",</p>

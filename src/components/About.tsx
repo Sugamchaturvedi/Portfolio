@@ -181,7 +181,7 @@ export const About: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-sm font-bold text-white">Lovely Professional University</div>
-                  <div className="text-xs text-slate-400">B.Tech Computer Science & Engineering (2024 – Present) • CGPA 6.5</div>
+                  <div className="text-xs text-slate-400">B.Tech Computer Science & Engineering (2024 – Present) • CGPA 6.67</div>
                 </div>
               </div>
             </div>

@@ -106,7 +106,7 @@ Portfolio/
 
 ## 🎓 Academic & Credential Integrity
 
-- **University:** Lovely Professional University (LPU), Phagwara, Punjab (B.Tech CSE, 2024 – Present, CGPA: 6.5)
+- **University:** Lovely Professional University (LPU), Phagwara, Punjab (B.Tech CSE, 2024 – Present, CGPA: 6.67)
 - **Certifications Included:**
   - Red Hat Certified System Administrator (RHCSA) — Red Hat
   - Programming Using C++ — Infosys Wingspan

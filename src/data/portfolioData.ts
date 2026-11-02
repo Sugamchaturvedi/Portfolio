@@ -15,7 +15,7 @@ export const personalInfo = {
   stats: [
     { label: 'Core Projects', value: '3+' },
     { label: 'Certifications', value: '7' },
-    { label: 'Current CGPA', value: '6.5' },
+    { label: 'Current CGPA', value: '6.67' },
     { label: 'Status', value: 'Available for Internships' }
   ]
 };
@@ -249,7 +249,7 @@ export const educationData: EducationItem[] = [
     institution: 'Lovely Professional University',
     location: 'Phagwara, Punjab, India',
     duration: 'August 2024 – Present',
-    grade: 'CGPA: 6.5',
+    grade: 'CGPA: 6.67',
     current: true,
     details: [
       'Core coursework: Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks.',
