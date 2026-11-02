@@ -97,10 +97,12 @@ Portfolio/
 2. **DevTrack — Project Management System**
    - *Tech:* React, Vite, FastAPI, Python, SQLAlchemy, SQLite, Tailwind CSS
    - *Highlights:* Workspace ownership, task lifecycle states, protected OAuth2/Bearer endpoints, and automated backend test coverage.
+   - *Repository:* [DevTrack](https://github.com/Sugamchaturvedi/DevTrack)
 
-3. **Hotel Management System**
+3. **Hotel Management System (Hotel-Nova)**
    - *Tech:* Java, Spring Boot, MySQL, JavaScript, HTML5, CSS3
    - *Highlights:* Room inventory management, reservation queues, automated invoice calculation, and core Java data structures (`ArrayList`, `HashMap`, `Queue`, `Stack`).
+   - *Repository:* [Hotel-Nova](https://github.com/Sugamchaturvedi/Hotel-Nova)
 
 ---
 

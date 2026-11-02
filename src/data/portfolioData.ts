@@ -72,13 +72,13 @@ export const projectsData: Project[] = [
       'Clean separation of models, schemas, repositories, and API routers',
       'Optimistic UI state updates on client side for responsive task drag-and-drop'
     ],
-    githubUrl: 'https://github.com/Sugamchaturvedi20/DevTrack',
+    githubUrl: 'https://github.com/Sugamchaturvedi/DevTrack',
     hasLiveDemo: false,
     statusBadge: 'Full-Stack'
   },
   {
     id: 'hotel-management-system',
-    title: 'Hotel Management System',
+    title: 'Hotel Management System (Hotel-Nova)',
     subtitle: 'Enterprise Hospitality Management & Automated Billing Suite',
     featured: false,
     category: 'Backend / Cloud',
@@ -100,7 +100,7 @@ export const projectsData: Project[] = [
       'HashMap lookups providing O(1) room status and guest session resolution',
       'Layered Spring Boot architecture: Controller, Service, and Repository patterns'
     ],
-    githubUrl: 'https://github.com/Sugamchaturvedi20/Hotel-Management-System',
+    githubUrl: 'https://github.com/Sugamchaturvedi/Hotel-Nova',
     hasLiveDemo: false,
     statusBadge: 'Enterprise Java'
   }
