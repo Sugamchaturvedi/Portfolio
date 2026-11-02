@@ -9,7 +9,8 @@ import {
   Sparkles,
   MapPin,
   Award,
-  Terminal
+  Terminal,
+  ExternalLink
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
@@ -97,20 +98,40 @@ export const About: React.FC = () => {
 
                 {/* Key Quick Badges below photo */}
                 <div className="p-5 bg-[#080d1a] border-t border-white/10 grid grid-cols-2 gap-3 text-xs font-mono">
-                  <div className="p-2.5 rounded-xl bg-slate-900/80 border border-white/5 flex items-center gap-2">
+                  <a
+                    href="https://www.linkedin.com/posts/sugam20_linux-rhcsa-lpu-activity-7388627491948740608-4GwX"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 rounded-xl bg-slate-900/80 border border-white/5 hover:border-red-500/40 hover:bg-slate-900 transition flex items-center gap-2 group/rhcsa focus:outline-none focus:ring-1 focus:ring-red-400"
+                    title="View RHCSA Certificate on LinkedIn"
+                    aria-label="View Red Hat RHCSA Certificate on LinkedIn"
+                  >
                     <Award className="w-4 h-4 text-red-400 shrink-0" />
                     <div>
-                      <div className="text-white font-semibold">RHCSA</div>
+                      <div className="text-white font-semibold flex items-center gap-1">
+                        <span>RHCSA</span>
+                        <ExternalLink className="w-3 h-3 text-slate-500 group-hover/rhcsa:text-red-400" />
+                      </div>
                       <div className="text-[10px] text-slate-400">Red Hat Certified</div>
                     </div>
-                  </div>
-                  <div className="p-2.5 rounded-xl bg-slate-900/80 border border-white/5 flex items-center gap-2">
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/posts/sugam20_infosys-cplusplus-learningneverstops-activity-7388623056564301824-YHJY"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 rounded-xl bg-slate-900/80 border border-white/5 hover:border-sky-500/40 hover:bg-slate-900 transition flex items-center gap-2 group/inf focus:outline-none focus:ring-1 focus:ring-sky-400"
+                    title="View Infosys C++ Certificate on LinkedIn"
+                    aria-label="View Infosys C++ Certificate on LinkedIn"
+                  >
                     <Terminal className="w-4 h-4 text-sky-400 shrink-0" />
                     <div>
-                      <div className="text-white font-semibold">C++ & Python</div>
+                      <div className="text-white font-semibold flex items-center gap-1">
+                        <span>C++ & Python</span>
+                        <ExternalLink className="w-3 h-3 text-slate-500 group-hover/inf:text-sky-400" />
+                      </div>
                       <div className="text-[10px] text-slate-400">Infosys Certified</div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>

@@ -33,6 +33,7 @@ export interface Certification {
   status: 'Completed' | 'In Progress' | 'Scheduled';
   badgeColor: string;
   skillsCovered: string[];
+  certificateUrl?: string;
 }
 
 export interface EducationItem {

@@ -177,7 +177,8 @@ export const certificationsData: Certification[] = [
     date: 'August 2024',
     status: 'Completed',
     badgeColor: 'border-red-500/30 bg-red-950/20 text-red-300',
-    skillsCovered: ['Linux Shell', 'User & Permission Management', 'Storage & Filesystems', 'Service Deployment', 'System Security']
+    skillsCovered: ['Linux Shell', 'User & Permission Management', 'Storage & Filesystems', 'Service Deployment', 'System Security'],
+    certificateUrl: 'https://www.linkedin.com/posts/sugam20_linux-rhcsa-lpu-activity-7388627491948740608-4GwX'
   },
   {
     id: 'infosys-cpp',
@@ -186,7 +187,8 @@ export const certificationsData: Certification[] = [
     date: 'July 2025',
     status: 'Completed',
     badgeColor: 'border-sky-500/30 bg-sky-950/20 text-sky-300',
-    skillsCovered: ['C++ Fundamentals', 'Object-Oriented Programming', 'Pointers & Memory', 'Data Structures', 'Algorithms']
+    skillsCovered: ['C++ Fundamentals', 'Object-Oriented Programming', 'Pointers & Memory', 'Data Structures', 'Algorithms'],
+    certificateUrl: 'https://www.linkedin.com/posts/sugam20_infosys-cplusplus-learningneverstops-activity-7388623056564301824-YHJY'
   },
   {
     id: 'ethical-hacking',
@@ -195,7 +197,8 @@ export const certificationsData: Certification[] = [
     date: 'January 2025',
     status: 'Completed',
     badgeColor: 'border-emerald-500/30 bg-emerald-950/20 text-emerald-300',
-    skillsCovered: ['Network Reconnaissance', 'Vulnerability Assessment', 'Web Application Security', 'Penetration Testing Basics']
+    skillsCovered: ['Network Reconnaissance', 'Vulnerability Assessment', 'Web Application Security', 'Penetration Testing Basics'],
+    certificateUrl: 'https://lnkd.in/p/dcRJNByk'
   },
   {
     id: 'cloud-fundamentals',
@@ -204,7 +207,8 @@ export const certificationsData: Certification[] = [
     date: 'March 2025',
     status: 'Completed',
     badgeColor: 'border-cyan-500/30 bg-cyan-950/20 text-cyan-300',
-    skillsCovered: ['Cloud Architecture', 'Compute & Storage Services', 'IAM & Security', 'Scalability & High Availability']
+    skillsCovered: ['Cloud Architecture', 'Compute & Storage Services', 'IAM & Security', 'Scalability & High Availability'],
+    certificateUrl: 'https://lnkd.in/p/dxfp5SpD'
   },
   {
     id: 'dsa-fundamentals',
@@ -213,7 +217,8 @@ export const certificationsData: Certification[] = [
     date: 'June–July 2026',
     status: 'Completed',
     badgeColor: 'border-indigo-500/30 bg-indigo-950/20 text-indigo-300',
-    skillsCovered: ['Arrays & Strings', 'Linked Lists', 'Stacks & Queues', 'Trees & Graphs', 'Algorithm Complexity (Big O)']
+    skillsCovered: ['Arrays & Strings', 'Linked Lists', 'Stacks & Queues', 'Trees & Graphs', 'Algorithm Complexity (Big O)'],
+    certificateUrl: 'https://lnkd.in/p/dRPjR3aE'
   },
   {
     id: 'oracle-cert',
@@ -222,7 +227,8 @@ export const certificationsData: Certification[] = [
     date: 'August 2026',
     status: 'Completed',
     badgeColor: 'border-amber-500/30 bg-amber-950/20 text-amber-300',
-    skillsCovered: ['Relational Database Systems', 'SQL Queries & Optimization', 'Database Architecture', 'Data Integrity']
+    skillsCovered: ['Relational Database Systems', 'SQL Queries & Optimization', 'Database Architecture', 'Data Integrity'],
+    certificateUrl: 'https://www.linkedin.com/posts/sugam20_oracle-ai-database-certified-foundations-activity-7496938816214249472-P1ga'
   },
   {
     id: 'public-speaking',
@@ -231,7 +237,8 @@ export const certificationsData: Certification[] = [
     date: 'July 2024',
     status: 'Completed',
     badgeColor: 'border-purple-500/30 bg-purple-950/20 text-purple-300',
-    skillsCovered: ['Technical Presentations', 'Team Communication', 'Stakeholder Alignment', 'Professional Articulation']
+    skillsCovered: ['Technical Presentations', 'Team Communication', 'Stakeholder Alignment', 'Professional Articulation'],
+    certificateUrl: 'https://lnkd.in/p/d_r4abQ8'
   }
 ];
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Calendar, CheckCircle2, ShieldCheck, Terminal, FileCode, Cloud, Database, MessageSquare } from 'lucide-react';
+import { Award, Calendar, CheckCircle2, ShieldCheck, Terminal, FileCode, Cloud, Database, MessageSquare, ExternalLink } from 'lucide-react';
 import { certificationsData } from '../data/portfolioData';
 
 export const Certifications: React.FC = () => {
@@ -88,11 +88,24 @@ export const Certifications: React.FC = () => {
               <div className="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
                 <span className="flex items-center gap-1.5 text-slate-400">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Resume Documented</span>
+                  <span>Verified Credential</span>
                 </span>
-                <span className="font-mono text-[11px] text-slate-400">
-                  Official Record
-                </span>
+                {cert.certificateUrl ? (
+                  <a
+                    href={cert.certificateUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-500/10 text-sky-300 border border-sky-500/20 hover:bg-sky-500/20 hover:border-sky-500/40 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-sky-400 group/link"
+                    aria-label={`Verify ${cert.title} on LinkedIn`}
+                  >
+                    <span>View Certificate</span>
+                    <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5" />
+                  </a>
+                ) : (
+                  <span className="font-mono text-[11px] text-slate-400">
+                    Official Record
+                  </span>
+                )}
               </div>
 
             </div>
