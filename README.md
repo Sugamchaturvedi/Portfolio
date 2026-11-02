@@ -38,16 +38,14 @@ npm run preview
 
 ## 📄 Resume Configuration & Updates
 
-The portfolio features a live PDF resume download button configured across both the desktop navbar, hero section, mobile drawer, and footer.
+The portfolio features a live Resume link configured across the desktop navbar, hero section, mobile drawer, and footer.
 
-### Resume File Location:
-- The active resume PDF is placed at:
-  ```
-  public/Sugam_Chaturvedi_Resume.pdf
-  ```
+- **Google Drive Resume Link:**
+  [https://drive.google.com/file/d/1Eig0aXb5w-SHyfZ9otm8CDCnBbEJ4qGy/view?usp=sharing](https://drive.google.com/file/d/1Eig0aXb5w-SHyfZ9otm8CDCnBbEJ4qGy/view?usp=sharing)
+- **Local Fallback PDF:**
+  `public/Sugam_Chaturvedi_Resume.pdf`
 - **How to update your resume:**
-  Whenever you have an updated PDF from your university or resume builder, simply replace the file named `Sugam_Chaturvedi_Resume.pdf` inside the `public/` directory with your new PDF file.
-- The website automatically serves and triggers direct downloads for this file when recruiters click **"Resume"** or **"Download Resume"**.
+  Update `resumeUrl` in `src/data/portfolioData.ts` or replace `public/Sugam_Chaturvedi_Resume.pdf`. Recruiters clicking **"Resume"** or **"View Resume"** will open the verified Google Drive resume document directly in a new tab.
 
 ---
 

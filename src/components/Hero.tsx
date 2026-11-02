@@ -3,7 +3,7 @@ import {
   ArrowRight, 
   Github, 
   Linkedin, 
-  Download, 
+  ExternalLink, 
   Terminal, 
   Copy, 
   Check, 
@@ -123,12 +123,13 @@ export const Hero: React.FC = () => {
               </button>
 
               <a
-                href={personalInfo.resumePath}
-                download="Sugam_Chaturvedi_Resume.pdf"
+                href={personalInfo.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 px-5 py-3 rounded-xl font-semibold bg-slate-900/60 hover:bg-slate-800 text-sky-400 hover:text-sky-300 border border-sky-500/30 hover:border-sky-400/60 focus:outline-none focus:ring-2 focus:ring-sky-400 transition-all duration-200"
-                title="Download Sugam's PDF Resume"
+                title="View Sugam's Resume on Google Drive"
               >
-                <Download className="w-4 h-4" />
+                <ExternalLink className="w-4 h-4" />
                 <span>Resume</span>
               </a>
             </div>

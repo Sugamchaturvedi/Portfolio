@@ -11,7 +11,9 @@ export const personalInfo = {
   github: 'https://github.com/Sugamchaturvedi20',
   linkedin: 'https://www.linkedin.com/in/sugam20',
   avatar: './sugam-chaturvedi.jpg',
-  resumePath: './Sugam_Chaturvedi_Resume.pdf',
+  resumeUrl: 'https://drive.google.com/file/d/1Eig0aXb5w-SHyfZ9otm8CDCnBbEJ4qGy/view?usp=sharing',
+  resumePath: 'https://drive.google.com/file/d/1Eig0aXb5w-SHyfZ9otm8CDCnBbEJ4qGy/view?usp=sharing',
+  localResumePdf: './Sugam_Chaturvedi_Resume.pdf',
   stats: [
     { label: 'Core Projects', value: '3+' },
     { label: 'Certifications', value: '7' },

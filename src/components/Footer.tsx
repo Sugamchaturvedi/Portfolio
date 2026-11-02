@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Github, Linkedin, Mail, Download, Terminal } from 'lucide-react';
+import { ArrowUp, Github, Linkedin, Mail, ExternalLink, Terminal } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
@@ -62,12 +62,14 @@ export const Footer: React.FC = () => {
             </a>
 
             <a
-              href={personalInfo.resumePath}
-              download="Sugam_Chaturvedi_Resume.pdf"
+              href={personalInfo.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-slate-900 border border-white/10 text-sky-400 hover:text-white hover:border-sky-500/40 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
+              title="View Resume on Google Drive"
             >
-              <Download className="w-3.5 h-3.5" />
-              <span>Resume PDF</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+              <span>Resume</span>
             </a>
 
             <button

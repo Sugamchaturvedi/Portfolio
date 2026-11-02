@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Download, Menu, X, Terminal, ExternalLink } from 'lucide-react';
+import { Menu, X, Terminal, ExternalLink } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 interface NavbarProps {
@@ -93,15 +93,16 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             })}
           </nav>
 
-          {/* Right Action: Download Resume & Social */}
+          {/* Right Action: View Resume & Social */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href={personalInfo.resumePath}
-              download="Sugam_Chaturvedi_Resume.pdf"
+              href={personalInfo.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-2 px-4 py-2 rounded-xl text-xs lg:text-sm font-semibold bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:from-sky-400 hover:to-indigo-500 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-sky-400"
-              title="Download Sugam Chaturvedi's PDF Resume"
+              title="View Sugam Chaturvedi's Resume on Google Drive"
             >
-              <Download className="w-4 h-4 transition-transform group-hover:-translate-y-0.5 duration-200" />
+              <ExternalLink className="w-4 h-4 transition-transform group-hover:-translate-y-0.5 duration-200" />
               <span>Resume</span>
             </a>
           </div>
@@ -109,12 +110,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
             <a
-              href={personalInfo.resumePath}
-              download="Sugam_Chaturvedi_Resume.pdf"
+              href={personalInfo.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-500/20 text-sky-300 border border-sky-500/30"
-              title="Download Resume"
+              title="View Resume on Google Drive"
             >
-              <Download className="w-3.5 h-3.5" />
+              <ExternalLink className="w-3.5 h-3.5" />
               <span>Resume</span>
             </a>
             <button
@@ -153,12 +155,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             })}
             <div className="pt-3 border-t border-white/10 mt-2 flex flex-col gap-2">
               <a
-                href={personalInfo.resumePath}
-                download="Sugam_Chaturvedi_Resume.pdf"
+                href={personalInfo.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl font-semibold bg-gradient-to-r from-sky-500 to-indigo-600 text-white text-sm shadow-md"
               >
-                <Download className="w-4 h-4" />
-                <span>Download Resume (PDF)</span>
+                <ExternalLink className="w-4 h-4" />
+                <span>View Resume (Google Drive)</span>
               </a>
               <div className="flex items-center justify-center gap-4 pt-2 text-xs text-slate-400">
                 <a
