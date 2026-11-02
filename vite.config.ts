@@ -24,11 +24,13 @@ const htmlFallbackPlugin = (): Plugin => ({
     })
   },
   closeBundle() {
-    // Ensure both dist/index7.html and dist/index.html are present for hosting compatibility
+    // Ensure dist/index7.html, dist/index.html and dist/404.html are present for GitHub Pages
     const distIndex7 = resolve(__dirname, 'dist/index7.html')
     const distIndex = resolve(__dirname, 'dist/index.html')
-    if (fs.existsSync(distIndex7) && !fs.existsSync(distIndex)) {
+    const dist404 = resolve(__dirname, 'dist/404.html')
+    if (fs.existsSync(distIndex7)) {
       fs.copyFileSync(distIndex7, distIndex)
+      fs.copyFileSync(distIndex7, dist404)
     }
   }
 })
