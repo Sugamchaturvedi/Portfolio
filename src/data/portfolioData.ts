@@ -280,30 +280,32 @@ export const educationData: EducationItem[] = [
 
 export const achievementsData: Achievement[] = [
   {
-    id: 'wns-care',
-    title: 'NGO Social Impact Contribution',
+    id: 'wns-care-cybersmart',
+    title: 'WNS Care Foundation — CyberSmart NGO Contribution',
     organization: 'WNS Care Foundation',
     date: 'October 2025',
-    role: 'Community Volunteer & Technology Contributor',
-    description: 'Contributed to grassroots community empowerment initiatives, assisting in educational outreach and supporting digital literacy programs organized by the foundation.',
+    role: 'CyberSmart Awareness Contributor & Volunteer',
+    description: 'Contributed to grassroots community empowerment and digital safety initiatives under the CyberSmart program, educating learners and peer groups on cybersecurity hygiene, phishing mitigation, and safe digital practices.',
     highlights: [
-      'Supported digital literacy drives for underprivileged learners',
-      'Assisted in coordination of community awareness sessions',
-      'Demonstrated collaborative adaptability in social impact settings'
-    ]
+      'Delivered digital literacy and cyber safety guidance for student communities',
+      'Educated peer groups on credential protection, 2FA, and phishing mitigation',
+      'Assisted in community outreach and digital awareness sessions'
+    ],
+    link: 'https://lnkd.in/p/dcc6zA25'
   },
   {
-    id: 'cybersmart',
-    title: 'CyberSmart Awareness Volunteering',
-    organization: 'CyberSmart Initiative',
-    date: '2024 – 2025',
-    role: 'Cybersecurity Awareness Volunteer',
-    description: 'Actively volunteered in peer-led digital safety programs, guiding students and participants on cybersecurity hygiene, phishing prevention, and safe internet practices.',
+    id: 'cloud-fundamentals',
+    title: 'Cloud Fundamentals & Infrastructure',
+    organization: 'Cloud Architecture & Technical Training',
+    date: 'March 2025',
+    role: 'Cloud Engineering Participant & Practitioner',
+    description: 'Completed foundational cloud infrastructure training covering Google Cloud Platform (GCP) principles, virtual machines, storage architectures, IAM security configurations, and scalable cloud solutions.',
     highlights: [
-      'Educated peer groups on credential safety and two-factor authentication',
-      'Shared practical guidelines on identifying phishing attacks and digital scams',
-      'Promoted cyber ethics and data privacy awareness across student networks'
-    ]
+      'Practical training on cloud compute, storage buckets, and networking models',
+      'Hands-on experience with Google Cloud Shell CLI and resource provisioning',
+      'Explored cloud IAM role assignment, principle of least privilege, and security fundamentals'
+    ],
+    link: 'https://lnkd.in/p/dxfp5SpD'
   }
 ];
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeartHandshake, ShieldCheck, Calendar, CheckCircle2 } from 'lucide-react';
+import { HeartHandshake, Cloud, Calendar, CheckCircle2, ExternalLink } from 'lucide-react';
 import { achievementsData } from '../data/portfolioData';
 
 export const Experience: React.FC = () => {
@@ -11,13 +11,13 @@ export const Experience: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-mono font-medium">
             <HeartHandshake className="w-3.5 h-3.5 text-purple-400" />
-            <span>COMMUNITY & LEADERSHIP</span>
+            <span>EXPERIENCE & INITIATIVES</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Achievements & Volunteering Experience
+            Experience & Technical Initiatives
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            Active community involvement in digital literacy outreach and peer-focused cybersecurity education.
+            Hands-on technical development in cloud fundamentals alongside grassroots community cyber-safety initiatives.
           </p>
         </div>
 
@@ -33,10 +33,10 @@ export const Experience: React.FC = () => {
                 {/* Header with Icon and Date */}
                 <div className="flex items-start justify-between">
                   <div className="w-12 h-12 rounded-xl bg-slate-900/90 border border-white/10 flex items-center justify-center group-hover:border-purple-500/40 transition-colors">
-                    {item.id === 'wns-care' ? (
-                      <HeartHandshake className="w-6 h-6 text-purple-400" />
+                    {item.id === 'cloud-fundamentals' ? (
+                      <Cloud className="w-6 h-6 text-cyan-400" />
                     ) : (
-                      <ShieldCheck className="w-6 h-6 text-emerald-400" />
+                      <HeartHandshake className="w-6 h-6 text-purple-400" />
                     )}
                   </div>
                   <span className="flex items-center gap-1.5 text-xs font-mono text-slate-400">
@@ -66,7 +66,7 @@ export const Experience: React.FC = () => {
                 {/* Highlights List */}
                 <div className="space-y-2 pt-2 border-t border-white/5">
                   <div className="text-[11px] font-mono uppercase text-slate-400 tracking-wider">
-                    Key Contributions:
+                    Key Contributions & Takeaways:
                   </div>
                   {item.highlights.map((h, i) => (
                     <div key={i} className="flex items-start gap-2 text-xs text-slate-300 leading-normal">
@@ -78,13 +78,26 @@ export const Experience: React.FC = () => {
 
               </div>
 
-              {/* Status Note */}
+              {/* Status Note & Link Button */}
               <div className="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
                 <span className="font-mono text-emerald-400/90 flex items-center gap-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Resume Documented</span>
+                  <span>Verified Record</span>
                 </span>
-                <span className="text-[11px] font-mono text-slate-400">Social Impact & Outreach</span>
+                {item.link ? (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-500/10 text-sky-300 border border-sky-500/20 hover:bg-sky-500/20 hover:border-sky-500/40 hover:text-white transition focus:outline-none focus:ring-2 focus:ring-sky-400 group/link"
+                    aria-label={`View ${item.title} on LinkedIn`}
+                  >
+                    <span>View Post</span>
+                    <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-0.5" />
+                  </a>
+                ) : (
+                  <span className="text-[11px] font-mono text-slate-400">Documented</span>
+                )}
               </div>
 
             </div>

@@ -55,5 +55,6 @@ export interface Achievement {
   role: string;
   description: string;
   highlights: string[];
+  link?: string;
 }
 
