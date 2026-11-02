@@ -25,6 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     { name: 'Projects', href: '#projects' },
     { name: 'Certifications', href: '#certifications' },
     { name: 'Education', href: '#education' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -118,8 +119,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl bg-slate-900/80 border border-white/10 text-slate-300 hover:text-white focus:outline-none"
-              aria-label="Toggle navigation menu"
+              className="p-2 rounded-xl bg-slate-900/80 border border-white/10 text-slate-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-sky-400"
+              aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -129,7 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-2 border-b border-white/10 bg-[#070b16]/95 backdrop-blur-xl px-4 pt-3 pb-6 shadow-2xl transition-all">
+        <div id="mobile-menu" className="md:hidden mt-2 border-b border-white/10 bg-[#070b16]/95 backdrop-blur-xl px-4 pt-3 pb-6 shadow-2xl transition-all">
           <nav className="flex flex-col gap-1.5">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);

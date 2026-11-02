@@ -91,7 +91,7 @@ export const Hero: React.FC = () => {
             <div className="flex flex-wrap items-center gap-4 pt-3">
               <button
                 onClick={() => scrollTo('projects')}
-                className="group flex items-center gap-2.5 px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:from-sky-400 hover:to-indigo-500 transition-all duration-200"
+                className="group flex items-center gap-2.5 px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:from-sky-400 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-sky-400 transition-all duration-200"
               >
                 <span>View Featured Projects</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -99,7 +99,7 @@ export const Hero: React.FC = () => {
 
               <button
                 onClick={() => scrollTo('contact')}
-                className="px-6 py-3 rounded-xl font-semibold bg-slate-900/80 hover:bg-slate-800 text-slate-200 hover:text-white border border-white/10 hover:border-sky-500/40 transition-all duration-200"
+                className="px-6 py-3 rounded-xl font-semibold bg-slate-900/80 hover:bg-slate-800 text-slate-200 hover:text-white border border-white/10 hover:border-sky-500/40 focus:outline-none focus:ring-2 focus:ring-sky-400 transition-all duration-200"
               >
                 <span>Contact Me</span>
               </button>
@@ -107,7 +107,7 @@ export const Hero: React.FC = () => {
               <a
                 href={personalInfo.resumePath}
                 download="Sugam_Chaturvedi_Resume.pdf"
-                className="flex items-center gap-2 px-5 py-3 rounded-xl font-semibold bg-slate-900/60 hover:bg-slate-800 text-sky-400 hover:text-sky-300 border border-sky-500/30 hover:border-sky-400/60 transition-all duration-200"
+                className="flex items-center gap-2 px-5 py-3 rounded-xl font-semibold bg-slate-900/60 hover:bg-slate-800 text-sky-400 hover:text-sky-300 border border-sky-500/30 hover:border-sky-400/60 focus:outline-none focus:ring-2 focus:ring-sky-400 transition-all duration-200"
                 title="Download Sugam's PDF Resume"
               >
                 <Download className="w-4 h-4" />
@@ -170,27 +170,33 @@ export const Hero: React.FC = () => {
                   </div>
 
                   {/* Terminal Tab Switchers */}
-                  <div className="flex items-center gap-1 bg-slate-900/80 p-0.5 rounded-lg border border-white/5 text-[11px] font-mono">
+                  <div className="flex items-center gap-1 bg-slate-900/80 p-0.5 rounded-lg border border-white/5 text-[11px] font-mono" role="tablist">
                     <button
+                      role="tab"
+                      aria-selected={activeTab === 'profile'}
                       onClick={() => setActiveTab('profile')}
-                      className={`px-2 py-0.5 rounded transition ${
-                        activeTab === 'profile' ? 'bg-sky-500/20 text-sky-300' : 'text-slate-400 hover:text-white'
+                      className={`px-2 py-0.5 rounded transition focus:outline-none focus:ring-1 focus:ring-sky-400 ${
+                        activeTab === 'profile' ? 'bg-sky-500/20 text-sky-300 font-semibold' : 'text-slate-400 hover:text-white'
                       }`}
                     >
                       profile.json
                     </button>
                     <button
+                      role="tab"
+                      aria-selected={activeTab === 'stack'}
                       onClick={() => setActiveTab('stack')}
-                      className={`px-2 py-0.5 rounded transition ${
-                        activeTab === 'stack' ? 'bg-sky-500/20 text-sky-300' : 'text-slate-400 hover:text-white'
+                      className={`px-2 py-0.5 rounded transition focus:outline-none focus:ring-1 focus:ring-sky-400 ${
+                        activeTab === 'stack' ? 'bg-sky-500/20 text-sky-300 font-semibold' : 'text-slate-400 hover:text-white'
                       }`}
                     >
                       stack.sh
                     </button>
                     <button
+                      role="tab"
+                      aria-selected={activeTab === 'status'}
                       onClick={() => setActiveTab('status')}
-                      className={`px-2 py-0.5 rounded transition ${
-                        activeTab === 'status' ? 'bg-sky-500/20 text-sky-300' : 'text-slate-400 hover:text-white'
+                      className={`px-2 py-0.5 rounded transition focus:outline-none focus:ring-1 focus:ring-sky-400 ${
+                        activeTab === 'status' ? 'bg-sky-500/20 text-sky-300 font-semibold' : 'text-slate-400 hover:text-white'
                       }`}
                     >
                       certs.log

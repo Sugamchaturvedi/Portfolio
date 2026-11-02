@@ -105,12 +105,14 @@ export const Skills: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             
             {/* Category Pills */}
-            <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
+            <div className="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none" role="tablist" aria-label="Skill categories">
               {categories.map(cat => (
                 <button
                   key={cat.id}
+                  role="tab"
+                  aria-selected={selectedCategory === cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-200 ${
+                  className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-sky-400 ${
                     selectedCategory === cat.id
                       ? 'bg-sky-500 text-white shadow-md shadow-sky-500/25 font-semibold'
                       : 'bg-slate-900/80 text-slate-400 hover:text-white hover:bg-slate-800 border border-white/5'
@@ -191,3 +193,4 @@ export const Skills: React.FC = () => {
     </section>
   );
 };
+

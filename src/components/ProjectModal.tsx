@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X, Github, CheckCircle2, Cpu } from 'lucide-react';
 import { Project } from '../types';
 
@@ -8,10 +8,34 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    if (project) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [project, onClose]);
+
   if (!project) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-black/80 backdrop-blur-md animate-fadeIn">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-black/80 backdrop-blur-md animate-fadeIn"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-project-title"
+    >
       <div 
         className="relative w-full max-w-3xl bg-[#0b1120] border border-white/15 rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
@@ -27,7 +51,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 {project.category}
               </span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">
+            <h3 id="modal-project-title" className="text-xl sm:text-2xl font-bold text-white">
               {project.title}
             </h3>
             <p className="text-xs sm:text-sm text-slate-400 mt-0.5">
@@ -37,7 +61,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           <button
             onClick={onClose}
-            className="p-2 rounded-xl bg-slate-900 border border-white/10 text-slate-400 hover:text-white hover:bg-slate-800 transition"
+            className="p-2 rounded-xl bg-slate-900 border border-white/10 text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -97,7 +121,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           {/* Verification Notice */}
-          <div className="p-3.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs text-slate-400 flex items-center justify-between">
+          <div className="p-3.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs text-slate-400 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
             <span>Repository contains complete codebase and documentation.</span>
             <span className="font-mono text-emerald-400 text-[11px]">Academic Integrity Verified</span>
           </div>
@@ -108,7 +132,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         <div className="p-4 bg-[#080d1a] border-t border-white/10 flex items-center justify-end gap-3">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-slate-900 text-slate-300 hover:text-white border border-white/10"
+            className="px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-slate-900 text-slate-300 hover:text-white border border-white/10 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
           >
             Close
           </button>
@@ -116,7 +140,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-md shadow-sky-500/20 hover:from-sky-400 hover:to-indigo-500"
+            className="flex items-center gap-2 px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-md shadow-sky-500/20 hover:from-sky-400 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
           >
             <Github className="w-4 h-4" />
             <span>Open GitHub Repository</span>

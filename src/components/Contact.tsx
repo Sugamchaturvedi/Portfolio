@@ -29,21 +29,21 @@ export const Contact: React.FC = () => {
     setTimeout(() => setCopiedEmail(false), 2000);
   };
 
+  const subjectLine = encodeURIComponent(formData.subject || `Inquiry from Portfolio — ${formData.name || 'Recruiter'}`);
+  const emailBody = encodeURIComponent(
+    `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\n---\nSent via Sugam Chaturvedi Portfolio`
+  );
+  const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(personalInfo.email)}&su=${subjectLine}&body=${emailBody}`;
+  const mailtoUrl = `mailto:${personalInfo.email}?subject=${subjectLine}&body=${emailBody}`;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       setStatus('error');
       return;
     }
 
-    // Construct mailto URI
-    const subjectLine = encodeURIComponent(formData.subject || `Inquiry from Portfolio — ${formData.name}`);
-    const emailBody = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\n---\nSent via Sugam Chaturvedi Portfolio`
-    );
-    const mailtoUrl = `mailto:${personalInfo.email}?subject=${subjectLine}&body=${emailBody}`;
-
-    // Open default mail client
+    // Trigger mailto client
     window.location.href = mailtoUrl;
     setStatus('success');
   };
@@ -95,14 +95,15 @@ export const Contact: React.FC = () => {
                 <div className="flex items-center justify-between gap-2">
                   <a
                     href={`mailto:${personalInfo.email}`}
-                    className="text-xs sm:text-sm font-mono text-sky-400 hover:text-sky-300 truncate"
+                    className="text-xs sm:text-sm font-mono text-sky-400 hover:text-sky-300 truncate focus:outline-none focus:underline"
                   >
                     {personalInfo.email}
                   </a>
                   <button
                     onClick={handleCopyEmail}
-                    className="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition"
+                    className="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
                     title="Copy email address"
+                    aria-label="Copy email address"
                   >
                     {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                   </button>
@@ -118,7 +119,7 @@ export const Contact: React.FC = () => {
                   href={personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-900 border border-white/5 hover:border-sky-500/40 text-slate-300 hover:text-white transition group"
+                  className="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-900 border border-white/5 hover:border-sky-500/40 text-slate-300 hover:text-white transition group focus:outline-none focus:ring-2 focus:ring-sky-400"
                 >
                   <div className="flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-sky-500/10 text-sky-400">
@@ -136,7 +137,7 @@ export const Contact: React.FC = () => {
                   href={personalInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-900 border border-white/5 hover:border-sky-500/40 text-slate-300 hover:text-white transition group"
+                  className="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-900 border border-white/5 hover:border-sky-500/40 text-slate-300 hover:text-white transition group focus:outline-none focus:ring-2 focus:ring-sky-400"
                 >
                   <div className="flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-slate-800 text-slate-300">
@@ -152,7 +153,7 @@ export const Contact: React.FC = () => {
               </div>
 
               {/* Location & Timezone info */}
-              <div className="pt-3 border-t border-white/5 flex items-center justify-between text-xs text-slate-400 font-mono">
+              <div className="pt-3 border-t border-white/5 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400 font-mono">
                 <span className="flex items-center gap-1.5">
                   <MapPin className="w-3.5 h-3.5 text-sky-400" />
                   <span>Phagwara, Punjab (IST, UTC+5:30)</span>
@@ -176,7 +177,7 @@ export const Contact: React.FC = () => {
                   <span>Send a Direct Message</span>
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-400">
-                  Fill out the form below to initiate an email to Sugam Chaturvedi with your pre-filled inquiry.
+                  Fill out the form below to launch your email client with your pre-filled inquiry.
                 </p>
               </div>
 
@@ -184,81 +185,111 @@ export const Contact: React.FC = () => {
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="text-xs font-mono font-medium text-slate-300">
+                    <label htmlFor="contact-name" className="text-xs font-mono font-medium text-slate-300">
                       Your Name <span className="text-sky-400">*</span>
                     </label>
                     <input
+                      id="contact-name"
                       type="text"
                       required
-                      placeholder="e.g. Alex Morgan"
+                      placeholder="e.g. Recruiter / Hiring Team"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500/60 transition"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/60 transition"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-mono font-medium text-slate-300">
+                    <label htmlFor="contact-email" className="text-xs font-mono font-medium text-slate-300">
                       Your Email <span className="text-sky-400">*</span>
                     </label>
                     <input
+                      id="contact-email"
                       type="email"
                       required
-                      placeholder="e.g. alex@company.com"
+                      placeholder="e.g. recruiter@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500/60 transition"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/60 transition"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-mono font-medium text-slate-300">
+                  <label htmlFor="contact-subject" className="text-xs font-mono font-medium text-slate-300">
                     Subject
                   </label>
                   <input
+                    id="contact-subject"
                     type="text"
-                    placeholder="e.g. SDE Internship Opportunity / Technical Collaboration"
+                    placeholder="e.g. SDE Internship Opportunity"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500/60 transition"
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/60 transition"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-mono font-medium text-slate-300">
+                  <label htmlFor="contact-message" className="text-xs font-mono font-medium text-slate-300">
                     Message <span className="text-sky-400">*</span>
                   </label>
                   <textarea
+                    id="contact-message"
                     required
                     rows={4}
                     placeholder="Write your message, project opportunity, or internship details here..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500/60 transition resize-none"
+                    className="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/60 transition resize-none"
                   ></textarea>
                 </div>
 
                 {status === 'success' && (
-                  <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-400" />
-                    <span>Email client launched! Thank you for reaching out.</span>
+                  <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono space-y-2">
+                    <div className="flex items-center gap-2">
+                      <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>Email client triggered with your pre-filled inquiry.</span>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2 pt-1">
+                      <span className="text-slate-400">Using webmail?</span>
+                      <a
+                        href={gmailWebUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30 hover:bg-sky-500/30 transition flex items-center gap-1"
+                      >
+                        <span>Open in Gmail Web</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </div>
                   </div>
                 )}
 
                 {status === 'error' && (
                   <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300 text-xs font-mono">
-                    Please fill out all required fields.
+                    Please fill out all required fields (Name, Email, Message).
                   </div>
                 )}
 
-                <button
-                  type="submit"
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3 rounded-xl font-semibold bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:from-sky-400 hover:to-indigo-500 transition-all duration-200 text-sm"
-                >
-                  <Send className="w-4 h-4" />
-                  <span>Send Message via Email</span>
-                </button>
+                <div className="flex flex-wrap items-center gap-3">
+                  <button
+                    type="submit"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3 rounded-xl font-semibold bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:from-sky-400 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-sky-400 transition-all duration-200 text-sm"
+                  >
+                    <Send className="w-4 h-4" />
+                    <span>Send Message via Email</span>
+                  </button>
+
+                  <a
+                    href={gmailWebUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-white/10 hover:border-sky-500/40 focus:outline-none focus:ring-2 focus:ring-sky-400 transition text-sm"
+                  >
+                    <span>Open directly in Gmail</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
 
               </form>
 

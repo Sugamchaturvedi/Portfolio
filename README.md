@@ -133,3 +133,4 @@ Portfolio/
 1. In `vite.config.ts`, set `base: '/portfolio/'` (matching your GitHub repository name).
 2. Run `npm run build`.
 3. Deploy the `dist` folder to your `gh-pages` branch.
+

@@ -116,7 +116,8 @@ export const Projects: React.FC = () => {
                       href={featuredProject.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:from-sky-400 hover:to-indigo-500 transition-all duration-200"
+                      className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:from-sky-400 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-sky-400 transition-all duration-200"
+                      aria-label="View Smart Classroom and Timetable Scheduler on GitHub"
                     >
                       <Github className="w-5 h-5" />
                       <span>View GitHub Repository</span>
@@ -125,7 +126,8 @@ export const Projects: React.FC = () => {
 
                     <button
                       onClick={() => setSelectedProject(featuredProject)}
-                      className="flex items-center gap-2 px-5 py-3 rounded-xl font-semibold bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white border border-white/10 hover:border-sky-500/40 transition-all"
+                      className="flex items-center gap-2 px-5 py-3 rounded-xl font-semibold bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-white border border-white/10 hover:border-sky-500/40 focus:outline-none focus:ring-2 focus:ring-sky-400 transition-all"
+                      aria-label="Inspect Architecture for Smart Classroom and Timetable Scheduler"
                     >
                       <Info className="w-4 h-4 text-sky-400" />
                       <span>Inspect Architecture</span>
@@ -281,7 +283,8 @@ export const Projects: React.FC = () => {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-white border border-white/10 hover:border-sky-500/40 transition-all"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 hover:bg-slate-800 text-white border border-white/10 hover:border-sky-500/40 focus:outline-none focus:ring-2 focus:ring-sky-400 transition-all"
+                  aria-label={`View ${project.title} on GitHub`}
                 >
                   <Github className="w-4 h-4" />
                   <span>GitHub Repository</span>
@@ -290,7 +293,8 @@ export const Projects: React.FC = () => {
 
                 <button
                   onClick={() => setSelectedProject(project)}
-                  className="flex items-center gap-1.5 text-xs font-semibold text-sky-400 hover:text-sky-300 transition-colors"
+                  className="flex items-center gap-1.5 text-xs font-semibold text-sky-400 hover:text-sky-300 focus:outline-none focus:underline transition-colors"
+                  aria-label={`Inspect detailed architecture for ${project.title}`}
                 >
                   <span>Detailed Architecture</span>
                   <ArrowRight className="w-3.5 h-3.5" />

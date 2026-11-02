@@ -37,7 +37,7 @@ export const Footer: React.FC = () => {
               href={personalInfo.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-400 hover:text-white hover:border-sky-500/40 transition"
+              className="p-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-400 hover:text-white hover:border-sky-500/40 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
               aria-label="GitHub"
             >
               <Github className="w-4 h-4" />
@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
               href={personalInfo.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-400 hover:text-white hover:border-sky-500/40 transition"
+              className="p-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-400 hover:text-white hover:border-sky-500/40 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
 
             <a
               href={`mailto:${personalInfo.email}`}
-              className="p-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-400 hover:text-white hover:border-sky-500/40 transition"
+              className="p-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-400 hover:text-white hover:border-sky-500/40 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
               aria-label="Email"
             >
               <Mail className="w-4 h-4" />
@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
             <a
               href={personalInfo.resumePath}
               download="Sugam_Chaturvedi_Resume.pdf"
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-slate-900 border border-white/10 text-sky-400 hover:text-white hover:border-sky-500/40 transition"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-slate-900 border border-white/10 text-sky-400 hover:text-white hover:border-sky-500/40 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
             >
               <Download className="w-3.5 h-3.5" />
               <span>Resume PDF</span>
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
 
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-sky-500/20 to-indigo-500/20 text-sky-300 border border-sky-500/30 hover:border-sky-500/60 transition group"
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-sky-500/20 to-indigo-500/20 text-sky-300 border border-sky-500/30 hover:border-sky-500/60 focus:outline-none focus:ring-2 focus:ring-sky-400 transition group"
               aria-label="Scroll back to top"
             >
               <span>Back to Top</span>
