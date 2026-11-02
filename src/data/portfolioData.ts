@@ -163,8 +163,16 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'VS Code', level: 'Development IDE', icon: 'Code', description: 'Primary developer workspace configured for multi-language workflows and debugging' },
       { name: 'Agile & Scrum', level: 'Methodology', icon: 'CheckCircle2', description: 'Iterative sprint cycles, user stories, standups, and incremental delivery' },
-      { name: 'Jira', level: 'Project Tracking', icon: 'Kanban', description: 'Backlog grooming, issue tracking, velocity tracking, and sprint boards' },
-      { name: 'Problem-Solving & Team Player', level: 'Soft Skills', icon: 'Users', description: 'Analytical reasoning, effective technical communication, and active adaptability' }
+      { name: 'Jira', level: 'Project Tracking', icon: 'Kanban', description: 'Backlog grooming, issue tracking, velocity tracking, and sprint boards' }
+    ]
+  },
+  {
+    id: 'soft-skills',
+    name: 'Soft Skills',
+    skills: [
+      { name: 'Problem-Solving', level: 'Core Strength', icon: 'Brain', description: 'Analytical reasoning, algorithmic thinking, diagnosing root causes, and systematic debugging' },
+      { name: 'Team Player', level: 'Interpersonal', icon: 'Users', description: 'Collaborative peer programming, active listening, clear documentation, and cross-functional teamwork' },
+      { name: 'Adaptability', level: 'Work Ethic', icon: 'Sparkles', description: 'Quick learner eager to master emerging tech, responsive to feedback, and adaptable to dynamic project needs' }
     ]
   }
 ];

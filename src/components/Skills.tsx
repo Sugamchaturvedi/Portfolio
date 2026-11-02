@@ -24,7 +24,8 @@ import {
   Kanban, 
   Users,
   Search,
-  Check
+  Check,
+  Brain
 } from 'lucide-react';
 import { skillCategories } from '../data/portfolioData';
 
@@ -52,7 +53,8 @@ const iconMap: Record<string, React.ReactNode> = {
   Code: <Code className="w-5 h-5 text-blue-400" />,
   CheckCircle2: <CheckCircle2 className="w-5 h-5 text-emerald-400" />,
   Kanban: <Kanban className="w-5 h-5 text-indigo-400" />,
-  Users: <Users className="w-5 h-5 text-purple-400" />
+  Users: <Users className="w-5 h-5 text-purple-400" />,
+  Brain: <Brain className="w-5 h-5 text-cyan-400" />
 };
 
 export const Skills: React.FC = () => {

@@ -174,6 +174,25 @@ export const About: React.FC = () => {
                 </div>
               </div>
 
+              {/* Core Soft Skills */}
+              <div className="p-4 rounded-xl bg-slate-900/80 border border-white/5 space-y-2.5">
+                <div className="text-xs font-mono uppercase text-emerald-400 tracking-wider">Soft Skills & Work Ethic</div>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 rounded-lg text-xs font-medium bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    <span>Problem-Solving</span>
+                  </span>
+                  <span className="px-3 py-1 rounded-lg text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                    <span>Team Player</span>
+                  </span>
+                  <span className="px-3 py-1 rounded-lg text-xs font-medium bg-amber-500/10 text-amber-300 border border-amber-500/20 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                    <span>Adaptability</span>
+                  </span>
+                </div>
+              </div>
+
               {/* Education Highlights Snippet */}
               <div className="flex items-center gap-4 pt-2 border-t border-white/10">
                 <div className="p-3 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400">
